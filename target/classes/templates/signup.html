@@ -10,14 +10,28 @@
     </head>
     <body>
         <section class="container">
+          <h3>Registration Form</h3>
             <form th:action="@{/do_signup}" method=post th:object="${user}">
-                <div class="mb-3">
+                <div class="mb-3 col-12">
                     <label for="formGroupExampleInput" class="form-label">Name</label>
-                    <input type="text" th:value="${user.name}" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                    <input type="text" name="name" th:value="${user.name}" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
                   </div>
-                  <div class="mb-3">
+                  <div class="col-12">
                     <label for="formGroupExampleInput2" class="form-label">Email</label>
-                    <input type="text" th:value="${user.email}" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                    <input type="text" name="email" th:value="${user.email}" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email">
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <label for="formGroupExampleInput2" class="form-label">Password</label>
+                    <input type="password" name="password" th:value="${user.password}" class="form-control" id="inputPassword">
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <textarea class="form-control" name="about" th:value="${user.about}" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit</button>
                   </div>
             </form>
         </section>
