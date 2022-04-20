@@ -55,7 +55,7 @@ public class HomeController {
         User u = userRepository.getUserByUserName(user.getEmail());
         model.addAttribute("user", u);
         if(user.getRole().equals("ADMIN_ROLE")){
-            if(user.getPassword().equals("admin"))
+            if(user.getPassword().equals(u.getPassword()))
                 return "admin/admin_dashboard";
         }
         if(user.getRole().equals("USER_ROLE")){

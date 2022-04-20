@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeLeaf.org">
+<html lang="en" xmlns:th="https://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,8 @@
     <title>User DASHBOARD</title>
 </head>
 <body>
-    <h1>Welcome,</h1><h1 th:text="${user.name}"></h1>
+    <section>
+        <h1>Welcome</h1>
+    </section>
 </body>
 </html>
