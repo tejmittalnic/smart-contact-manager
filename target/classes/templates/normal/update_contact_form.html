@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- th:replace="normal/base::Layout(~{::section})" -->
+<html lang="en" xmlns:th="https://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <section>
+        <form th:object="${contact}" th:action="@{'/do-update-contact/'+${contact.cid}}" method="post">
+            <div class="mb-3">
+              <input type="text" th:value="${contact.name}" name="name" class="form-control"  placeholder="Enter Name">
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label"></label>
+                <input type="text" th:value="${contact.secondName}" name="secondName" class="form-control"  placeholder="Enter Nick Name">
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label"></label>
+                <input type="text" th:value="${contact.phone}" name="phone" class="form-control"  placeholder="Enter Phone Number">
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label"></label>
+                <input type="text" th:value="${contact.email}" name="email" class="form-control"  placeholder="Enter Email">
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label"></label>
+                <input type="text" th:value="${contact.work}" name="work" class="form-control"  placeholder="Enter WOrk">
+              </div>
+
+              <div class="mb-3">
+                <textarea class="form-control" th:value="${contact.description}" name="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" name="image" type="file" id="formFile">
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </section>
+</body>
+</html>

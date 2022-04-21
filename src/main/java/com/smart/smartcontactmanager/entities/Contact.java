@@ -79,6 +79,6 @@ public class Contact {
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
     
 }
